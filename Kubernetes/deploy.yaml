@@ -1,0 +1,19 @@
+apiVersion: apps/v1  #Defines the API Version
+kind: Deployment     #Kinds parameter defines which kind of file is it, over here it is Deployment
+metadata:
+  name: dep1        #Stores the name of the deployment
+spec:               # Under Specifications, you mention all the specifications for the deployment
+  replicas: 3       # Number of replicas would be 3
+  selector:
+   matchLabels:
+     app: httpd     #Label name which would be searched is httpd
+  template:
+    metadata:
+    labels:
+      app: httpd   #Template name would be httpd
+  spec:            # Under Specifications, you mention all the specifications for the containers
+   containers:
+   - name: httpd   #Name of the containers would be httpd
+     image: httpd:latest  #The image which has to be downloaded is httpd:latest
+     ports:
+     - containerPort: 80 #The application would be exposed on port 80
