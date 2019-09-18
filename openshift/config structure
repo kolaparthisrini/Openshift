@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: pod
+metadata:
+   name: Tesing_for_Image_pull -----------> 1
+   spec:
+      containers:
+         - name:<name>------------------------> 2
+         image: <Name of the Docker image>----------> 3
+         imagePullPolicy: Always ------------->4
+         command: ["echo", "SUCCESS"] ------------------->
